@@ -12,6 +12,18 @@ docker run -d \
    itsziget/docron
 ```
 
+If you want to run commands working with dates and times without docker, you may want to set a timezone. You can do this by setting variable TIMEZONE. Alternatively, you can set TZ which is compatible with debian images.
+
+```bash
+
+docker run -d \
+   -e TZ=Europe/Budapest \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   -v $(pwd)/crontab:/etc/crontabs/root \
+   --name cron \
+   itsziget/docron
+```
+
 Generally it is recommended to use the same version inside the container as you have on the host, but the image on Docker Hub contains only the latest stable version. If you have different version installed on your machine, download the source from GitHub and build any version you need.
 
 ```bash
