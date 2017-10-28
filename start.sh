@@ -2,6 +2,10 @@
 
 ZONEINFO_PATH="/usr/share/zoneinfo"
 
+if [ ! -z "${TZ}" ]; then
+    TIMEZONE="${TZ}";
+fi;
+
 if [ ! -z "${TIMEZONE}" ]; then
     TIMEZONE_PATH="${ZONEINFO_PATH}/${TIMEZONE}";
     if [ -f "${TIMEZONE_PATH}" ]; then
