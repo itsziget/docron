@@ -29,7 +29,7 @@ Generally it is recommended to use the same version inside the container as you 
 ```bash
 git clone https://github.com/itsziget/docron.git docron
 cd docron
-docker build --arg DOCKER_VERSION="<version>" -t docron-custom .  
+docker build --build-arg DOCKER_VERSION="<version>" -t docron-custom .  
 ```
 
 You can use the build script to build exactly the same version as you have on the host:
